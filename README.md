@@ -23,3 +23,12 @@ Cloner le dépôt et installez les dépendances avec :
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Utilisation
+
+### Lancer l'application
+
+```bash
+streamlit run main.py
+
