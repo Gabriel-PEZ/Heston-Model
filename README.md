@@ -31,4 +31,13 @@ pip install -r requirements.txt
 
 ```bash
 streamlit run main.py
+```
 
+## Structure du Projet
+
+```plaintext
+Heston-Model/
+│-- pricing_utils/              # Contient les fonctions de pricing et de simulation
+│-- main.py                     # Fichier principal Streamlit
+│-- requirements.txt             # Liste des dépendances
+│-- README.md                   # Documentation du projet
