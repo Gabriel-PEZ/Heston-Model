@@ -27,11 +27,12 @@ pip install -r requirements.txt
 
 ## Utilisation
 
-### Lancer l'application
+Lancer l'application Streamlit avec la commande suivante :
 
 ```bash
 streamlit run main.py
 ```
+Ensuite, configurez les paramètres du modèle Heston et de l'option via l'interface graphique, puis cliquez sur "Calculer prix & grecs".
 
 ## Structure du Projet
 
