@@ -41,3 +41,8 @@ Heston-Model/
 │-- main.py                     # Fichier principal Streamlit
 │-- requirements.txt             # Liste des dépendances
 │-- README.md                   # Documentation du projet
+```
+
+## Auteur
+
+**Gabriel PEZENNEC**
