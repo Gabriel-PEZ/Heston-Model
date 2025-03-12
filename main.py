@@ -24,7 +24,7 @@ def main():
     Cette application simule le **modèle de Heston** en Monte Carlo et calcule le prix d'un **Call & Put** ainsi que leurs principaux **grecs** (Delta, Gamma, Vega, Theta, Rho) par différences finies.
     """)
     
-    # Paramètres Heston dans la sidebar
+
     st.sidebar.header("Paramètres Heston")
     S_0   = st.sidebar.number_input("Prix initial S₀", value=100.0, step=1.0)
     r     = st.sidebar.number_input("Taux sans risque r", value=0.05, step=0.01)
@@ -53,12 +53,12 @@ def main():
     
     if st.sidebar.button("Calculer prix & grecs"):
         with st.spinner("Simulation en cours..."):
-            # Calcul du prix
+        
             call_price, put_price = mc_price_call_put_heston(
                 S_0, r, T, kappa, theta, v0, rho, xi,
                 steps, Npaths, K, seed=seed
             )
-            # Calcul des grecs
+           
             greeks = compute_all_greeks(
                 S_0, r, T, kappa, theta, v0, rho, xi,
                 steps, Npaths, K,
@@ -70,7 +70,6 @@ def main():
             )
         st.success("Simulation terminée !")
         
-        # Affichage des résultats de prix
         st.subheader("Prix estimés")
         col1, col2 = st.columns(2)
         col1.metric("Prix du Call", f"{call_price:.4f}")
@@ -92,7 +91,6 @@ def main():
         col9.metric("Theta", f"{greeks['theta_put']:.4f}")
         col10.metric("Rho",  f"{greeks['rho_put']:.4f}")
         
-        # Optionnel : Affichage de quelques trajectoires simulées
         prices, sigs = generate_heston_paths(S_0, T, r, kappa, theta, v0, rho, xi,
                                              steps, Npaths, seed=seed)
         fig, ax = plt.subplots(1, 2, figsize=(12, 5))
